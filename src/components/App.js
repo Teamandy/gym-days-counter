@@ -40,10 +40,8 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div className="app">
-                <Menu />
                 {(this.props.location.pathname === '/') ?
                     <GymDaysCounter total={this.countDays()}
                         lift={this.countDays("lifting")}
@@ -53,6 +51,7 @@ class App extends React.Component {
                     <AddDayForm /> : (this.props.location.pathname === '/list-days') ?
                     <GymDayList days={this.state.allGymDays} /> : <Whoops404 />
                 }
+                <Menu />
             </div>
         )
     }

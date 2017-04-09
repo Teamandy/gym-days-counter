@@ -6,13 +6,13 @@ import ListDaysIcon from "react-icons/lib/fa/table"
 
 const Menu = () => (
     <nav className='menu'>
-        <Link to='/' activeClassName='selected'>
+        <Link to='/'>
             <HomeIcon />
         </Link>
-        <Link to='/add-day' activeClassName='selected'>
+        <Link to='/add-day'>
             <AddDayIcon />
         </Link>
-        <Link to='/list-days' activeClassName='selected'>
+        <Link to='/list-days'>
             <ListDaysIcon />
         </Link>
     </nav>
