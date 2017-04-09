@@ -1,0 +1,39 @@
+div#app{
+    width: 445px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    //background-image: url('http://res.cloudinary.com/diwizpcib/image/upload/c_crop,h_445,w_400/v1491579661/gym_trvsxc.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.gym-days-count{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+    .text-days{
+        font-size: 25px;
+    }
+}
+.total-days{
+    flex-basis: 100%;
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+.lifting-days{
+    flex-basis: 50%;
+    margin-bottom: 70px;
+}
+.cardio-days{
+    flex-basis: 50%;
+    margin-bottom: 70px;
+}
+.goal{
+    flex-basis: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
