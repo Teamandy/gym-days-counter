@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import Lift from 'react-icons/lib/md/fitness-center'
 import Cardio from 'react-icons/lib/md/directions-bike'
