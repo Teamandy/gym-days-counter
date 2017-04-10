@@ -1,0 +1,19 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+    font-size: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    a{
+        color: black;
+        transition: color 0.3s;
+        &:hover{
+            color: red;
+        }
+    }
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

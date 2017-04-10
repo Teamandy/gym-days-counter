@@ -1,0 +1,31 @@
+table{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    caption{
+        font-size: 35px;
+        text-transform: uppercase;
+    }
+    thead{
+        th{
+            font-size: 25px;
+        }
+        td{
+            font-size: 20px;
+            padding-bottom: 30px;
+            a{
+                font-size: 20px;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+    tbody{
+        margin-top: 50px;
+        font-size: 20px;
+        svg{
+            border: 3px solid white;
+            border-radius: 100%;
+        }
+    }
+}

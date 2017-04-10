@@ -17,21 +17,25 @@ const calcGoalProgress = (goal, total) => (
 const GymDaysCounter = ({ total, lift, cardio, goal }) => (
     <div className="gym-days-count">
         <div className="total-days">
+            <h4>Total days</h4>
             <span>{total}</span>
             <Total />
-            <span className="text-days">days</span>
+            <span className="text-days">{(total > 1) ? 'days' : 'day'}</span>
         </div>
         <div className="lifting-days">
+            <h6>Lifting</h6>
             <span>{lift}</span>
             <Lift />
-            <span className="text-days">days</span>
+            <span className="text-days">{(lift > 1) ? 'days' : 'day'}</span>
         </div>
         <div className="cardio-days">
+            <h6>Cardio</h6>
             <span>{cardio}</span>
             <Cardio />
-            <span className="text-days">days</span>
+            <span className="text-days">{(cardio > 1) ? 'days' : 'day'}</span>
         </div>
         <div className="goal">
+            <h6>Goal performance:</h6>
             <span>{calcGoalProgress(goal, total)}</span>
         </div>
     </div>

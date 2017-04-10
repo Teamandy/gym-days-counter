@@ -1,0 +1,22 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 35px;
+}
+.select-gym,
+.select-date,
+.select-lifting,
+.select-cardio{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: #A9191D;
+    font-size: 35px;
+    color: white;
+    border-radius: 10px;
+}

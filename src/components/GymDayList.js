@@ -11,20 +11,23 @@ const GymDayList = ({ days, filter }) => {
     return (
         <div className="gym-day-list">
             <table>
+                <caption>Your gym days</caption>
                 <thead>
+                    <tr>
+                        <td colSpan={4}>
+                            <span>Filter by: </span>
+                            <Link to='/list-days'> All days </Link>
+                            <Link to='/list-days/lifting'> Lifting days </Link>
+                            <Link to='/list-days/cardio'> Cardio days </Link>
+                        </td>
+                    </tr>
                     <tr>
                         <th>Date</th>
                         <th>Gym</th>
                         <th>Lifting</th>
                         <th>Cardio</th>
                     </tr>
-                    <tr>
-                        <td colSpan={4}>
-                            <Link to='/list-days'> All days </Link>
-                            <Link to='/list-days/lifting'> Lifting days </Link>
-                            <Link to='/list-days/cardio'> Cardio days </Link>
-                        </td>
-                    </tr>
+                    
                 </thead>
                 <tbody>
                     {filterDays.map((day, i) => (

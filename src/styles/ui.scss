@@ -1,22 +1,40 @@
+@import './menu';
+@import './add-day-form';
+@import './gym-day-list';
+
+
 div#app{
+    position: relative;
     width: 445px;
+    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
-    //background-image: url('http://res.cloudinary.com/diwizpcib/image/upload/c_crop,h_445,w_400/v1491579661/gym_trvsxc.jpg');
+    border: 4px solid black;
+    border-radius: 20px;
+    background-image: url("http://res.cloudinary.com/diwizpcib/image/upload/c_crop,g_xy_center,h_445,w_400/v1491579661/gym_trvsxc.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    color: white;
+    height: 621px;
+    overflow: auto;
+    h6{
+        margin: 0;
+        padding: 0;
+    }
 }
 .gym-days-count{
     display: flex;
-    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     text-align: center;
     font-size: 35px;
     margin-top: 80px;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
     .text-days{
         font-size: 25px;
+    }
+    h4{
+        margin: 0;
     }
 }
 .total-days{
@@ -33,7 +51,6 @@ div#app{
     margin-bottom: 70px;
 }
 .goal{
-    flex-basis: 100%;
-    font-size: 20px;
+    font-size: 35px;
     margin-bottom: 20px;
 }

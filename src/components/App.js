@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import GymDayList from './GymDayList'
 import GymDaysCounter from './GymDaysCounter'
 import AddDayForm from './AddDayForm'
@@ -12,26 +13,33 @@ class App extends React.Component {
             allGymDays: [
                 {
                     gym: 'Smart Gym',
-                    date: new Date(2017, 2, 1),
+                    date: '2017-03-01',
                     lifting: true,
                     cardio: false
                 },
                 {
                     gym: 'Arena Gym',
-                    date: new Date(2017, 2, 3),
+                    date: '2017-03-03',
                     lifting: false,
                     cardio: true
                 },
                 {
                     gym: 'Top Gym',
-                    date: new Date(2017, 2, 7),
+                    date: '2017-03-07',
                     lifting: false,
                     cardio: true
                 }
             ]
         }
+        this.addNewDay = this.addNewDay.bind(this)
     }
-
+    addNewDay(newDay) {
+        this.setState({
+            allGymDays: [
+                ...this.state.allGymDays, newDay
+            ]
+        })
+    }
     countDays(filter) {
         const { allGymDays } = this.state
         return allGymDays.filter(
@@ -42,20 +50,31 @@ class App extends React.Component {
     render() {
         console.log(this.props);
         return (
-            <div className="app">
-                {(this.props.location.pathname === '/') ?
-                    <GymDaysCounter total={this.countDays()}
-                        lift={this.countDays("lifting")}
-                        cardio={this.countDays("cardio")}
-                        goal={100}
-                    /> : (this.props.location.pathname === '/add-day') ? 
-                    <AddDayForm /> :
-                    <GymDayList days={this.state.allGymDays} 
-                                filter={this.props.match.params.filter}
-                    />
-                }
-                <Menu />
-            </div>
+            <Router>
+                <div className="app">
+                    <Route exact path='/' render={
+                        () =>
+                            <GymDaysCounter total={this.countDays()}
+                                lift={this.countDays("lifting")}
+                                cardio={this.countDays("cardio")}
+                                goal={100}
+                            />
+
+                    } />
+                    <Route exact path='/:page' render={
+                        ({ location}) => 
+                    (location.pathname === '/add-day') ?
+                            <AddDayForm onNewDay={this.addNewDay} /> :
+                            <GymDayList days={this.state.allGymDays} />
+                    } />
+                    <Route path='/:page/:filter' render={
+                        ({match}) => <GymDayList days={this.state.allGymDays}
+                            filter={match.params.filter}
+                        />
+                    } />
+                    <Menu />
+                </div>
+            </Router>
         )
     }
 }

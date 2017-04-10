@@ -7,7 +7,7 @@ import Total from 'react-icons/lib/fa/calendar'
 const GymDayRow = ({ gym, date, lifting, cardio }) => (
     <tr>
         <td>
-            {date.getMonth() + 1}/{date.getDate()}/{date.getFullYear()}
+            {date}
         </td>
         <td>
             {gym}
@@ -24,7 +24,7 @@ export default GymDayRow
 
 GymDayRow.propTypes = {
     gym: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.string.isRequired,
     lifting: PropTypes.bool,
     cardio: PropTypes.bool
 }
