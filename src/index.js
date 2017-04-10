@@ -9,7 +9,8 @@ render(
     <Router>
         <div>
             <Route exact path='/' component={App} />
-            <Route path='/:page' component={App} />
+            <Route exact path='/:page' component={App}/>
+            <Route path='/:page/:filter' component={App} />
         </div>
     </Router>,
     app)

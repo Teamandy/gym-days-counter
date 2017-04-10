@@ -40,6 +40,7 @@ class App extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="app">
                 {(this.props.location.pathname === '/') ?
@@ -48,8 +49,10 @@ class App extends React.Component {
                         cardio={this.countDays("cardio")}
                         goal={100}
                     /> : (this.props.location.pathname === '/add-day') ? 
-                    <AddDayForm /> : (this.props.location.pathname === '/list-days') ?
-                    <GymDayList days={this.state.allGymDays} /> : <Whoops404 />
+                    <AddDayForm /> :
+                    <GymDayList days={this.state.allGymDays} 
+                                filter={this.props.match.params.filter}
+                    />
                 }
                 <Menu />
             </div>
